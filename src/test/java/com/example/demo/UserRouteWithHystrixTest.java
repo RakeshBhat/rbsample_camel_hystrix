@@ -109,7 +109,7 @@ public class UserRouteWithHystrixTest {
 	public void weaveMockUserService() throws Exception{
 		
 		camelContext.getRouteDefinitions().stream().forEach(r -> {
-   		 logger.info("getId {}", r.getId());
+	    logger.info("getRouteDefinitions().getId {}", r.getId());
    	 });
 		
 		RouteDefinition rd = camelContext.getRouteDefinition("withHystrixId");
@@ -134,7 +134,7 @@ public class UserRouteWithHystrixTest {
 	public void weaveMockUserService_fallBack() throws Exception{
 		
 		camelContext.getRouteDefinitions().stream().forEach(r -> {
-   		 logger.info("getId {}", r.getId());
+   		 logger.info("getRouteDefinitions().getId {}", r.getId());
    	 });
 		
 		RouteDefinition rd = camelContext.getRouteDefinition("getCachedDataId");

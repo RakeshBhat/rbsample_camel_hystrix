@@ -60,7 +60,7 @@ public class UserRouteWithOutHystrixTest {
 	public void setUp() throws Exception {
 
 		camelContext.getRouteDefinitions().stream().forEach(r -> {
-			logger.info("getId {}", r.getId());
+	   		logger.info("getRouteDefinitions().getId {}", r.getId());
 		});
 
 		camelContext.getRouteDefinition("userHostWithOutHystrixId").autoStartup(true).adviceWith(camelContext,
