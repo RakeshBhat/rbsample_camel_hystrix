@@ -1,5 +1,6 @@
 ##1- test userData_successfully fails in UserRouteWithHystrixTest, as the get route definition call returns null, can't find HTTP "to" route routeId in the camelContext. If I comment the fall-back bean routeId, then only it can find the HTTP "to" route. Is it I can test only one scenario in Hystrix test ?   
-public void weaveMockUserService() throws Exception{
+
+```public void weaveMockUserService() throws Exception{
 RouteDefinition rd = camelContext.getRouteDefinition("withHystrixId");
 assertNotNull(rd); <<< assert fails
 java.lang.AssertionError
@@ -41,19 +42,15 @@ java.lang.AssertionError
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+```
 
 
-===============================================================================================================
-log
-===============================================================================================================
+***
+> log
 
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::        (v2.1.3.RELEASE)
+***
 
+```
 :48.266  INFO 4932 --- [           main] c.example.demo.UserRouteWithHystrixTest  : The following profiles are active: utest
 :48.872  INFO 4932 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$e1886ef3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 :49.046  INFO 4932 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
@@ -102,3 +99,4 @@ log
 :56.169  INFO 4932 --- [ngupInterceptor] o.a.camel.main.MainLifecycleStrategy     : CamelContext: camel-3 has been shutdown, triggering shutdown of the JVM.
 :56.171  INFO 4932 --- [ngupInterceptor] o.a.camel.spring.SpringCamelContext      : Apache Camel 2.23.1 (CamelContext: camel-3) uptime 5.394 seconds
 :56.171  INFO 4932 --- [ngupInterceptor] o.a.camel.spring.SpringCamelContext      : Apache Camel 2.23.1 (CamelContext: camel-3) is shutdown in 0.050 seconds
+```
